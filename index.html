@@ -4,203 +4,217 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Document</title>
   </head>
   <body>
     <header>
-      <a href="#"> CLOUD FLEX </a>
-      <button><img src="menu.png" alt="menu" /></button>
-      <nav>
-        <ul>
-          <li><a href=""> about us</a></li>
-          <li><a href=""> contacts</a></li>
-        </ul>
-      </nav>
-      <a href=""> COVID-19 Update</a>
-      <button><img src="world.png" alt="language" /></button>
+      <div class="header">
+        <a href="form.html" class="logo">CLOUD<span>FLEX</span></a>
+        <a href="#" class="header_" >about us</a>
+        <a href="#" class="header_" >contact</a>
+        <button class="menu button1"><img src="photo/menu.svg" alt="menu"></button>
+      </div>
     </header>
     <main>
       <h1>CloudFlex Main Page</h1>
-      <section>
-        <p>WHEN PERFORMANCE MATTERS</p>
-        <a href="#"> Start development with us! </a>
-        <article>
-          <img src="1" alt="pigeon" />
-          <p>
-            WE USE COOKIES TO ENSURE YOUR BEST EXPERIENCE. THROUGH YOUR
-            CONTINUED USE OF THIS SITE YOU ACCEPT THIS USE. FOR MORE
-            INFORMATION, PLEASE SEE OUR PRIVACY POLICY.
-          </p>
-          <button>ACCEPT</button>
-        </article>
-        <button>Scroll down</button>
+      <section class="intro">
+        <p class="intro_p">WHEN PERFORMANCE MATTERS</p>
+        <a class="black_button_1" href="/"> Start development with us! </a>
+        <!--<button id="scroll">Scroll down</button>-->
+        <div class="pigeonart">
+          <div class="pigeon">
+            <img src="photo/pigeon.png" alt="pigeon" />
+            <p>
+              WE USE COOKIES TO ENSURE YOUR BEST EXPERIENCE. THROUGH YOUR
+              CONTINUED USE OF THIS SITE YOU ACCEPT THIS USE, FOR MORE
+              INFORMATION, PLEASE SEE OUR PRIVACY POLICY
+            </p>
+            <button class="accept">ACCEPT</button>
+          </div>
+        </div>
         <hr />
       </section>
-      <section>
+      <section class="how">
         <h2>How we work</h2>
-        <ul>
+        <ul class="wowlist">
           <li>
-            <img src="1" alt="" width="45" height="45" />
-            <p>Development</p>
-            <p>
+            <img src="photo/development.svg" alt="icon1" class="development" />
+            <p class="word">Development</p>
+            <p class="words">
               Using best practices to make reliable, well-documented and easy to
               maintain system.
             </p>
           </li>
           <li>
-            <img src="1" alt="" width="45" height="45" />
-            <p>Analysis</p>
-            <p>
+            <img src="photo/analysis.svg" alt="icon1" />
+            <p class="word">Analysis</p>
+            <p class="words">
               Gathering client's ideas we are happy to help with a technical
               vision.
             </p>
           </li>
           <li>
-            <img src="1" alt="" width="45" height="45" />
-            <p>Design</p>
-            <p>
+            <img src="photo/design.svg" alt="icon3" />
+            <p class="word">Design</p>
+            <p class="words">
               In-depth analysis makes our solutions flexible, scalable and
               robust.
             </p>
           </li>
           <li>
-            <img src="1" alt="" width="45" height="45" />
-            <p>Maintenance</p>
-            <p>
+            <img src="photo/maintenance.svg" alt="icon4" />
+            <p class="word">Maintenance</p>
+            <p class="words">
               Gathering client's ideas we are happy to help with a technical
               vision.
             </p>
           </li>
           <li>
-            <img src="1" alt="" width="45" height="45" />
-            <p>Integration</p>
-            <p>
+            <img src="photo/integration.svg" alt="icon5" />
+            <p class="word">Integration</p>
+            <p class="words">
               Solutions that go with the times to improve businesses and give
               customers best experience.
             </p>
           </li>
           <li>
-            <img src="1" alt="" width="45" height="45" />
-            <p>Testing</p>
-            <p>
+            <img src="photo/testing.svg" alt="icon6" />
+            <p class="word">Testing</p>
+            <p class="words">
               Providing best quality of things developed by us for customers
             </p>
           </li>
         </ul>
+        <hr />
+      </section>
+      <section class="width-1440">
+        <ul class="second_ul">
+          <li class="left">
+            <div class="table">
+              <div class="tablel">
+                <h3>High Quality</h3>
+                <p>
+                  We are the leading firm by delivering quality and value to our
+                  clients.All our professionals have huge experience of creating comfortable
+                  high-quality software. We like what we do.
+                </p>
+              </div>
+              <img src="photo/laptopcrop.png" alt="Ph1" class="fpictures">
+              <img src="photo/laptop.png" alt="Ph11" class="spictures pict-ml">
+            </div>
+          </li>
+          <li class="right">
+            <div class="table">
+              <img src="photo/phone.png" alt="Ph21" class="spictures pict-mr">
+              <div class="tablel">
+                <h3>Always in touch</h3>
+                <p>We are always ready to answer your questions.
+                  You can call us at the weekends and at night.
+                  Also you can have a meeting
+                  for personal consultation.</p>
+              </div>
+              <img src="photo/phonecrop.png" alt="Ph2" class="fpictures">
+            </div>
+          </li>
+          <li class="left">
+            <div class="table">
+              <div class="tablel">
+                <h3>Individual approach</h3>
+                <p>
+                  Our company works according to the principle of individual approach to
+                  every client. This method lets us to get success in problems of all levels.</p>
+              </div>
+              <img src="photo/cactuscrop.png" alt="Ph3" class="fpictures">
+              <img src="photo/cactus.png" alt="Ph31" class="spictures pict-ml">
+            </div>
+          </li>
+        </ul>
       </section>
       <hr />
-      <section>
-        <h2>High Quality</h2>
-        <p>
-          We are the leading firm by delivering quality and value to our
-          clients. All our professionals have huge experience of creating
-          comfortable high-quality software. We like what we do.
-        </p>
-        <img src="1" alt="" width="520" height="340" />
-        <h2>Always in touch</h2>
-        <p>
-          We are always ready to answer your questions. You can call us at the
-          weekends and at night. Also you can have a meeting for personal
-          consultation.
-        </p>
-        <img src="1" alt="" width="460" height="320" />
-        <h2>Individual Approach</h2>
-        <p>
-          Our company works according to the principle of individual approach to
-          every client. This method lets us to get success in problems of all
-          levels.
-        </p>
-        <img src="1" alt="" width="380" height="510" />
-      </section>
-      <hr />
-      <section>
+      <section class="wow2">
         <h2>Our experience</h2>
-        <ul>
+        <ul class="exp">
           <li>
-            <a href="#">
+            <a href="/">
               <p>Serverless Live Streaming</p>
-              <img src="1" alt="" width="320" height="215" />
+              <img src="photo/streaming.png" alt="" />
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/">
               <p>Learn about CloudFlex team cases</p>
-              <img src="1" alt="" width="320" height="215" />
+              <img src="photo/learn.png" alt="" />
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/">
               <p>Live streaming from mobile</p>
-              <img src="1" alt="" width="320" height="215" />
+              <img src="photo/live.png" alt="" />
             </a>
           </li>
         </ul>
       </section>
-      <section>
+      <section class="otz">
         <h2>Testimonials</h2>
-        <img src="1" alt="" width="45" height="45" />
-        <blockquote>
-          <p>
-            Exelent review from a happy customer. I have not figured out what to
-            write, so I just added this sentence.
-          </p>
-        </blockquote>
-        <article>
-          <button>
-            <img src="1" alt="left" width="32" height="32" />
-          </button>
-          <label><input type="radio" name="text" /></label>
-          <label><input type="radio" name="text" /></label>
-          <label><input type="radio" name="text" /></label>
-          <button>
-            <img src="1" alt="right" width="32" height="32" />
-          </button>
-        </article>
+        <div class="test">
+          <div class="feedback">
+            <img src="photo/face.png" alt="Face">
+            <p>Exelent review from a happy customer. I have not figured out what to
+              write, so I just added this sentence.</p>
+          </div>
+        </div>
+        <div class="radioflex">
+          <button><img src="photo/left.svg" alt="left"></button>
+          <label class="radio"><input type="radio" id="radioButton1" name="slider" /></label>
+          <label class="radio"><input type="radio" id="radioButton2" name="slider" /></label>
+          <label class="radio"><input type="radio" id="radioButton3" name="slider" /></label>
+          <label class="radio"><input type="radio" id="radioButton4" name="slider" /></label>
+          <label class="radio"><input type="radio" id="radioButton5" name="slider" /></label>
+          <label class="radio"><input type="radio" id="radioButton6" name="slider" /></label>
+          <button><img src="photo/right.svg" alt="right"></button>
+        </div>
       </section>
-      <section>
-        <h2>contact us</h2>
-        <p>Ready to get started? Drop us a line!</p>
-        <form>
-          <p>
-            <label><input type="text" placeholder="Name" /></label>
-          </p>
-          <p>
-            <label><input type="text" placeholder="Email" /></label>
-          </p>
-          <p>
-            <label>
-              <textarea
-                cols="30"
-                rows="10"
-                placeholder="What we can do for you?"
-              ></textarea>
-            </label>
-          </p>
-          <button>Send</button>
+      <section class="last">
+        <!--<img src="/PNG/Cloud3.png" alt="Cloud3" class="cloud3">
+        <img src="/PNG/Cloud31.png" alt="Cloud31" class="cloud3n">
+        <img src="/PNG/Cloud2.png" alt="Cloud2" class="cloud2">
+        <img src="/PNG/Cloud21.png" alt="Cloud21" class="cloud2n">-->
+        <h2 class="fifth">Ready to get started? Drop us a line!</h2>
+        <form class="registration">
+          <label><input type="text" placeholder="Name" /></label>
+          <label><input type="text" placeholder="Email" /></label>
+          <label><input type="text" placeholder="What we can do for you?" /></label>
+          <button class="black_button_2">Send</button>
         </form>
       </section>
     </main>
     <footer>
-      <ul>
-        <li>
-          <a href="#"
-            ><img src="linkedln.png" alt="linkedln" width="32" height="32"
-          /></a>
+      <ul class="soc">
+        <li class="soc_svg">
+          <a href="/"><img src="photo/linkedin.svg" alt="linkedln" /></a>
         </li>
-        <li>
-          <a href="#"
-            ><img src="facebook.png" alt="facebook" width="32" height="32"
-          /></a>
+        <li class="soc_svg">
+          <a href="/"><img src="photo/facebook.svg" alt="facebook" /></a>
         </li>
-        <li>
-          <a href="#"
-            ><img src="inst.png" alt="instagram" width="32" height="32"
-          /></a>
+        <li class="soc_svg">
+          <a href="/"><img src="photo/instagram.svg" alt="instagram" /></a>
         </li>
       </ul>
-      <a href="#">Terms of Use</a>
-      <a href="#">Privacy Policy</a>
-      <p>©CloudFlex 2019. All Rights Reserved.</p>
+      <div class="policy">
+        <a href="/" class="foot1">Terms of Use</a>
+        <a href="/" class="foot1">Privacy Policy</a>
+        <p class="foot2">©CloudFlex 2019. All Rights Reserved.</p>
+      </div>
+      
     </footer>
   </body>
 </html>

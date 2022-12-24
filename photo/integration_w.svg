@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="29" fill="none"><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none"/>
+
+<defs>
+<clipPath id="clip0_430_46">
+<rect width="33.09090042114258" height="28.36359977722168" fill="white" y="0.12121599912643433" x="0.5758060216903687" id="svg_1"/>
+</clipPath>
+</defs>
+<g class="currentLayer" style=""><title>Layer 1</title><g clip-path="url(#clip0_430_46)" id="svg_2" class="selected" fill="#ffffff" fill-opacity="1">
+<path d="M13.2434 10.1482H21.9686V0.952182C21.9686 0.493489 21.5342 0.121216 20.9991 0.121216H1.54527C1.01012 0.121216 0.575806 0.493489 0.575806 0.952182V17.6269C0.575806 18.0856 1.01012 18.4579 1.54527 18.4579H12.274V10.9792C12.274 10.5205 12.7083 10.1482 13.2434 10.1482Z" fill="#ffffff" id="svg_3" fill-opacity="1"/>
+<path d="M32.6972 10.1482H21.9685V17.6269C21.9685 18.0856 21.5342 18.4579 20.9991 18.4579H12.2739V27.6539C12.2739 28.1126 12.7082 28.4848 13.2434 28.4848H32.6972C33.2324 28.4848 33.6667 28.1126 33.6667 27.6539V10.9792C33.6667 10.5205 33.2324 10.1482 32.6972 10.1482Z" fill="#ffffff" id="svg_4" fill-opacity="1"/>
+</g></g></svg>
