@@ -6,9 +6,9 @@ console.log(`${ums} м/c соответствует ${ums*3.6} км/ч`);
 //задание 2
 console.log("");
 let a=10, b=8, c=6;
-let p=(a+b+c)/2;
 if ((a+b>c) && (a+c>b) && (b+c>a))
     {
+        let p=(a+b+c)/2;
         console.log("треугольник существует");
         console.log(` периметр = ${a+b+c}`);
         console.log(` площадь = ${Math.sqrt(p*(p-a)*(p-b)*(p-c))}`);
