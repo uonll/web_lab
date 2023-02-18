@@ -1,7 +1,7 @@
 //задание 1
 let ums=20, ukmh=36;
 console.log(`${ukmh} м/c км/ч соответствует ${ukmh/3.6} м/c`);
-console.log(`${ums} м/c м/c соответствует ${ums*3.6} км/ч`);
+console.log(`${ums} м/c соответствует ${ums*3.6} км/ч`);
 
 //задание 2
 console.log("");
@@ -68,18 +68,52 @@ console.log(line);
 //задание 5
 console.log("");
 let num=11;
-let z;
+let z=NaN;
 do
     {
         z = prompt('Введите целое число:');
-        //if (!isNaN(z))
+        if (!isNaN(z))
             {
                 if (z==num) {console.log("Вы угадали!");}
                 else
-                if (z>num) {console.log("Ваше число больше");}
-                    else {console.log("Ваше число меньше");}
+                if (z>num) {console.log(`Число ${z} больше загаданного`);}
+                    else {console.log(`Число ${z} меньше загаданного`);}
             }
-        //else {console.log("Вы не ввели число!");}    
+        else {console.log("Вы не ввели число!");}    
     }
-while (z==num && z);
+while (z!=num);
 
+//задание 6
+console.log("");
+n=prompt('Введите целое ненулевое n');
+x=prompt('Введите целое ненулевое x:');
+y=prompt('Введите целое ненулевое y:');
+console.log(`n=${n}, x=${x}, y=${y} => ${n%x===0 && n%y===0}`);
+
+//задание 7
+console.log("");
+let m=prompt('Введите номер месяца:');
+switch (m) {
+    case '1':
+    case '2':
+    case '3':        
+        console.log(`месяц ${m} - 1 квартал`);
+        break;
+    case '4':
+    case '5':
+    case '6':        
+        console.log(`месяц ${m} - 2 квартал`);
+        break;    
+    case '7':
+    case '8':
+    case '9':        
+        console.log(`месяц ${m} - 3 квартал`);
+        break;
+    case '10':
+    case '11':
+    case '12':        
+        console.log(`месяц ${m} - 4 квартал`);
+        break;
+    default:
+        console.log("Такого месяца не существует!");
+}
