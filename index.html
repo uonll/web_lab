@@ -1,13 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>Смирнова Софья - Лабораторная работа № 2</h1>
-  <script src="main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=El+Messiri&family=Roboto:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Смирнова Софья - Лабораторная № 3</title>
+  </head>
+  <body>
+    <header>
+      <div class="menuflex">
+        <a class="aheader" href="/"
+          ><img src="/pics/svg/logo.svg" alt="лого" width="37" height="80"
+        /></a>
+        <nav>
+          <ul class="ulnav">
+            <li>
+              <a class="aheader" href="/">Масло</a>
+            </li>
+            <li><a class="aheader" href="/">О нас</a></li>
+            <li>
+              <a class="aheader" href="/">Отзывы</a>
+            </li>
+            <li>
+              <a class="aheader" href="/">Оплата и доставка</a>
+            </li>
+            <li>
+              <a class="aheader" href="/">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="buttonhidden" id="menuicon">
+          <img src="/pics/svg/menu.svg" alt="меню" width="32" height="32" />
+        </button>
+        <button class="buttonhidden">
+          <img
+            src="/pics/svg/korzina.svg"
+            alt="корзина"
+            width="32"
+            height="32"
+          />
+        </button>
+      </div>
+    </header>
+    <main>
+      <section>
+        <img
+          class="oil"
+          src="/pics/png/oil.png"
+          alt="масло"
+          width="280"
+          height="314"
+        />
+        <h2>Масло "Для салата"</h2>
+        <p class="description">
+          Название говорит само за себя. Это идеальная заправка, которая даже
+          скучной и привычной капусте придаст неповторимый вкус и аромат.
+        </p>
+        <div class="count">
+          <button class="countbutton">-</button>
+          <p class="countp">2</p>
+          <button class="countbutton">+</button>
+        </div>
+        <button class="mainbutton">ПОДРОБНЕЕ</button>
+        <button class="mainbutton">В КОРЗИНУ</button>
+      </section>
+      <section>
+        <button class="signinbutton openModal">ЗАРЕГИСТИРОВАТЬСЯ</button>
+        <dialog class="modal">
+          <form class="registration" id="form">
+            <legend>Создание личного кабинета</legend>
+            <label
+              ><input
+                id="mail"
+                type="email"
+                placeholder="Email"
+                name="Email"
+                required
+              />
+            </label>
+            <label
+              ><input
+                type="password"
+                placeholder="Password"
+                name="Password"
+                id="pass"
+                minlength="6"
+                required
+            /></label>
+            <div><span id="error"></span></div>
+            <div class="formbuttons">
+              <button class="checkPass" type="button">Посмотреть пароль</button>
+              <button class="submit" type="submit">Отправить</button>
+              <button class="closeModal">Закрыть</button>
+            </div>
+          </form>
+        </dialog>
+      </section>
+    </main>
+    <script src="main.js"></script>
+    <footer></footer>
+  </body>
 </html>
