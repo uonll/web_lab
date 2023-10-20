@@ -1,0 +1,28 @@
+GET / HTTP/1.1
+Host: 127.0.0.1:8008
+
+####
+
+GET /stats HTTP/1.1
+Host: 127.0.0.1:8008
+Content-Type: application/json
+
+####
+
+GET /close HTTP/1.1
+Host: 127.0.0.1:8008
+
+####
+
+POST /comments HTTP/1.1
+Host: 127.0.0.1:8008
+content-type: application/json
+
+{
+    "comment": "000"
+}
+
+####
+
+GET /cat HTTP/1.1
+Host: 127.0.0.1:8008
