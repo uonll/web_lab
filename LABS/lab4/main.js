@@ -1,0 +1,204 @@
+import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/build/three.module.js';
+import {OrbitControls} from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/controls/OrbitControls.js';
+
+  const canvas = document.querySelector('#c');
+  const white = new THREE.Color( 0xffffff );
+  const black = new THREE.Color( 0x000000 );
+  const red = new THREE.Color( 0xff0000 );
+  const green = new THREE.Color( 0x00ff00 );
+  const blue = new THREE.Color( 0x0000ff );
+  let x = document.getElementById("x");
+  let y = document.getElementById("y");
+  let z = document.getElementById("z");
+  let radioButtons = document.getElementsByName('color');
+  let radioButtonsLight = document.getElementsByName('light');
+
+
+  // Renderer
+  const renderer = new THREE.WebGLRenderer({antialias: true, canvas});
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(900,900 / 16 * 9);
+  renderer.shadowMap.enabled = true;
+
+  // Directional light
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+  directionalLight.position.set( 0, 100, 0 );
+  directionalLight.target.position.set( 0, 0, 0 );
+  directionalLight.castShadow = true;
+  directionalLight.shadow.camera.top = 100
+  directionalLight.shadow.camera.bootom = -100
+  directionalLight.shadow.camera.left = -100
+  directionalLight.shadow.camera.right = 100
+
+  // Camera
+  const fov = 75;
+  const aspect = 2; 
+  const near = 0.1;
+  const far = 1000;
+  const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+  camera.position.z = 0;
+  camera.position.y = 100;
+  camera.position.x = 0;
+  camera.lookAt(0,0,0);
+
+  // Scene 
+  const control = new OrbitControls(camera, renderer.domElement);
+  const scene = new THREE.Scene();
+
+  // Spot light
+  let intensity1 = 1;
+  let distance1 = 600;
+  let angle1 = Math.PI * 0.25;
+  let penumbra1 = 1;
+  let decay1 = 0;
+
+  const spotLight = new THREE.SpotLight(white, intensity1, distance1, angle1, penumbra1, decay1);
+  spotLight.position.x +=50;
+  spotLight.position.y +=50;
+  spotLight.position.z +=50;
+  spotLight.castShadow = true;
+
+  
+scene.add(directionalLight);
+
+scene.add(spotLight);
+
+
+   buildPlane(0, 0, 0, 200, 200, -Math.PI/2, 0, 0); 
+   BufferGeometryPlane(200, 100, 0, 30, -50);
+   // Pyramide
+   BufferGeometryTriangularPyramid(15, 35, 30, -10);
+   // Sphere
+    const sphereGeometry = new THREE.SphereGeometry(10, 32, 16);
+    const sphereMaterial = new THREE.MeshPhongMaterial({ color: 'Gray' });
+    const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+    sphere.position.y = 20;
+    sphere.position.x = -40;
+    sphere.position.z = -10;
+    sphere.castShadow = true;
+    scene.add(sphere);
+   animate();
+
+let result = document.querySelector('#result');
+document.body.addEventListener('change', function (e) {
+  changeColor();
+  changeLight();
+});
+
+function changeColor() {
+  let arr = [red, green, blue];
+  for (var i = 0; i<radioButtons.length; i++) {
+    if (radioButtons[i].checked) {
+      sphere.material.color.set(arr[i]);
+      break;
+    }
+  }  
+}
+
+function BufferGeometryPlane(width, height, x, y, z) {
+  const geometry = new THREE.BufferGeometry();
+// create a simple square shape. We duplicate the top left and bottom right
+// vertices because each vertex needs to appear once per triangle.
+const vertices = new Float32Array( [
+	-width/2 + x, -height/2 + y,  z,
+  width/2 + x, -height/2 + y,  z,
+  width/2 + x,  height/2 + y,  z,
+
+  width/2 + x,  height/2 + y,  z,
+	-width/2 + x,  height/2 + y,  z,
+	-width/2 + x, -height/2 + y,  z
+]);
+
+// itemSize = 3 because there are 3 values (components) per vertex
+geometry.setAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
+geometry.computeVertexNormals();
+const material = new THREE.MeshLambertMaterial({ color: '0xffffff    '});
+const mesh = new THREE.Mesh( geometry, material );
+
+mesh.receiveShadow = true;
+mesh.castShadow = true;
+scene.add(mesh);
+
+}
+
+function BufferGeometryTriangularPyramid(side, x, y, z) {
+  let half = side / 2;
+  var geometry1 = new THREE.BufferGeometry();
+  const vertices1 = new Float32Array( [
+      0, 0, side,
+      side, 0,  0,
+      -half,  -Math.sqrt(side*side-(half)*(half)),  0,
+  
+      0, 0, side,
+      side, 0,  0,
+      -half,  Math.sqrt(side*side-half*half),  0,
+  
+      0, 0, side,
+      -half,  -Math.sqrt(side*side-half*half),  0,
+      -half,  Math.sqrt(side*side-half*half),  0,
+  
+      side, 0,  0,
+      -side/2,  -Math.sqrt(side*side-half*half),  0,
+      -side/2,  Math.sqrt(side*side-half*half),  0
+  ] );
+  geometry1.setAttribute('position', new THREE.Float32BufferAttribute(vertices1, 3));
+  geometry1.computeVertexNormals();
+  const material1 = new THREE.MeshPhongMaterial({ color: 'Gray', side:THREE.DoubleSide});
+  const pyramid = new THREE.Mesh(geometry1, material1);
+  pyramid.castShadow=true;
+  pyramid.position.x= x;
+  pyramid.position.y= y;
+  pyramid.position.z= z;
+  scene.add(pyramid);
+
+}
+
+function changeLight() {
+  for (var i = 0; i<radioButtonsLight.length; i++) {
+    if (radioButtonsLight[i].checked) {
+      if (i == 0) {
+        directionalLight.visible = true;
+        spotLight.visible = true;
+      } else if (i == 1) {
+        directionalLight.visible = false;
+        spotLight.visible = true;
+      } else if (i == 2) {
+        directionalLight.visible = true;
+        spotLight.visible = false;
+      }
+      break;
+    }
+  }  
+}
+
+
+export function animate() {
+  requestAnimationFrame(animate);
+  x.innerHTML = `X: ${camera.position.x.toPrecision(2)}`;
+  y.innerHTML = `Y: ${camera.position.y.toPrecision(2)}`;
+  z.innerHTML = `Z: ${camera.position.z.toPrecision(2)}`;
+
+  spotLight.position.x = camera.position.x + 40;
+  spotLight.position.y = camera.position.y - 20;
+  spotLight.position.z = camera.position.z + 30;
+  renderer.render(scene, camera);
+}
+
+
+function buildPlane(x, y, z, width, height, angleX, angleY, angleZ) {
+  var geo = new THREE.PlaneBufferGeometry(width, height, 8, 8);
+  var mat = new THREE.MeshLambertMaterial({ color: 0xffffff});
+  var plane1 = new THREE.Mesh(geo, mat);
+  const edges = new THREE.EdgesGeometry( geo );
+  const line = new THREE.LineSegments( edges, new THREE.LineBasicMaterial( { color: 0xffffff } ) );
+
+  plane1.rotation.set(angleX,angleY,angleZ);
+  plane1.position.set(x,y,z);
+  plane1.receiveShadow = true;
+  plane1.castShadow = true;
+  line.position.set(x,y,z);
+  line.rotation.set(angleX, angleY, angleZ);
+
+  scene.add(plane1);
+  scene.add( line );
+}
